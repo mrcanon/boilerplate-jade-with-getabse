@@ -1,0 +1,87 @@
+// Variables and Colors
+@import "styles/variables-colors";
+/*------------------------------------------------------------------
+[Table of contents]
+1. Reset
+2. Typography
+3. Grid
+4. Print
+5. Header
+6. Navigation Main
+7. Navigation Language
+8. Navigation Breadcrumb
+9. Banner
+10. Carousel
+11. Footer
+12. Feature
+13. Media
+14. Promotion
+15. Core wordpress
+-------------------------------------------------------------------*/
+// Import 1, 2, 3, 4 from base
+@import "base";
+
+/*------------------------------------------------------------------
+[5. Header]
+*/
+@import "styles/header";
+
+/*------------------------------------------------------------------
+[6. Navigation Main]
+*/
+@import "styles/nav-main";
+
+/*------------------------------------------------------------------
+[7. Navigation Language]
+*/
+@import "styles/nav-lang";
+
+/*------------------------------------------------------------------
+[8. Navigation Breadcrumb]
+*/
+@import "styles/nav-breadcrumb";
+
+/*------------------------------------------------------------------
+[7. Banner]
+*/
+@import "styles/banner";
+
+/*------------------------------------------------------------------
+[8. Carousel]
+*/
+@import "styles/carousel";
+
+/*------------------------------------------------------------------
+[10. Footer]
+*/
+@import "styles/footer";
+
+/*------------------------------------------------------------------
+[12. Feature]
+*/
+@import "styles/feature";
+
+/*------------------------------------------------------------------
+[12. News]
+*/
+@import "styles/news";
+
+/*------------------------------------------------------------------
+[13. Media]
+*/
+@import "styles/media";
+
+/*------------------------------------------------------------------
+[14. Promotion]
+*/
+@import "styles/promotion";
+
+/*------------------------------------------------------------------
+[15. Core wordpress]
+*/
+@import "styles/wordpress";
+
+/*------------------------------------------------------------------
+[99. Helpers]
+*/
+@import "base/helpers";

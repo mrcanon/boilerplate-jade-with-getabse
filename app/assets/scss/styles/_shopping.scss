@@ -1,0 +1,77 @@
+//SP
+.shopping {
+
+  img {
+    width: 100%;
+  }
+}
+
+.shopping-list {
+  font-size: 16px;
+  font-weight: bold;
+  list-style: none;
+  margin: 56px 0 35px;
+  padding: 0;
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    background: $color-primary;
+    color: $color-white;
+    display: block;
+    padding: 9px 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+//breakpoint XL
+@include breakpoint(m) {
+  .shopping {
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .shopping-list {
+    margin: 0;
+
+    li {
+      margin-bottom: 0;
+      position: absolute;
+
+      &:nth-child(1) {
+        left: percentage(585/1140);
+        top: percentage(84/668);
+      }
+
+      &:nth-child(2) {
+        bottom: 135px;
+        left: percentage(650/1140);
+      }
+
+      &:nth-child(3) {
+        bottom: 88px;
+        left: percentage(650/1140);
+      }
+
+      &:nth-child(4) {
+        bottom: 40px;
+        left: percentage(650/1140);
+      }
+    }
+
+    a {
+      min-width: 226px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      transition: background .3s ease-in-out;
+
+      &:hover {
+        background-color: darken($color-primary, 10%);
+      }
+    }
+  }
+}
+

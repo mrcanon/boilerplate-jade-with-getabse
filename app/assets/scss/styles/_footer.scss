@@ -1,0 +1,330 @@
+// Footer
+.footer {
+  background: $color-gray-lighter;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-main {
+  padding-bottom: 20px;
+  padding-top: 25px;
+}
+
+.footer-hr {
+  background: $color-gray-light;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.footer-menu {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding-left: 0;
+
+  a {
+    line-height: 21px;
+    text-decoration: none;
+  }
+
+  > li {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &.is-active {
+      background: $color-white;
+    }
+
+    > a {
+      color: $base-h3-color;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 28px;
+      margin-bottom: 10px;
+      margin-top: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+
+    li {
+      padding-bottom: 3px;
+      padding-top: 3px;
+    }
+
+    .is-active {
+      a {
+        color: $base-h3-color;
+      }
+    }
+  }
+}
+
+.footer-title {
+  color: $base-h3-color;
+  line-height: 28px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.footer-info {
+  line-height: 21px;
+  margin-bottom: 2px;
+
+  .footer-title {
+    margin-bottom: 7px;
+  }
+}
+
+.footer-info-contact {
+  letter-spacing: .2px;
+  padding-left: 0;
+  padding-right: 14px;
+
+  p {
+    margin-bottom: 12px;
+
+    + p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//Footer Bottom
+.footer-bottom {
+  background: $color-white;
+  position: relative;
+
+  &::before,
+  &::after {
+    background: $color-white;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 1000px;
+  }
+
+  &::after {
+    left: 100%;
+    right: auto;
+  }
+}
+
+.footer-logo,
+.footer-planting,
+.footer-terms {
+  text-align: center;
+}
+
+.footer-logo {
+  border-bottom: 1px solid $color-gray-light;
+  margin: 0 auto;
+  max-width: 252px;
+  padding-bottom: 25px;
+  padding-top: 33px;
+}
+
+.footer-planting {
+  padding-bottom: 30px;
+}
+
+.terms-tilte {
+  color: $base-h3-color;
+  font-size: 13px;
+}
+
+.terms-menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  a {
+    color: $base-h3-color;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.footer-terms {
+  padding-bottom: 16px;
+  padding-top: 19px;
+}
+
+.terms-copyright {
+  color: $base-font-color;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 0 auto;
+  max-width: 216px;
+}
+
+.back-top {
+  background-color: $color-primary;
+  clear: both;
+  color: $color-white;
+  display: block;
+  font-size: 15px;
+  height: 38px;
+  line-height: 38px;
+  margin-left: -15px;
+  text-align: center;
+  width: calc(100% + 30px);
+}
+
+// breakpoint M
+@include breakpoint(m) {
+
+  .footer-info,
+  .footer-menu {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-menu {
+
+    > li {
+      float: left;
+      padding-left: 8px;
+      padding-right: 8px;
+      width: 25%;
+    }
+
+    ul {
+      display: block;
+    }
+  }
+
+  .footer-title {
+    padding-left: 0;
+  }
+
+  .footer-info-contact {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  //Footer Bottom
+  .footer-logo {
+    border-bottom: 0;
+  }
+
+  .footer-planting {
+    padding-top: 35px;
+  }
+
+  .footer-back {
+    position: absolute;
+  }
+
+  .back-top {
+    @include transition(all .3s);
+    height: 50px;
+    line-height: 50px;
+    margin-left: 0;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    width: 50px;
+
+    &:hover {
+      background: darken($color-primary, 10%);
+      color: $color-white;
+    }
+  }
+}
+
+// Breakpoint XL
+@include breakpoint(xl) {
+  .footer {
+    .container {
+      position: relative;
+    }
+  }
+
+  .footer-logo,
+  .footer-planting,
+  .footer-terms {
+    text-align: left;
+  }
+
+  .terms-copyright {
+    max-width: none;
+  }
+
+  .footer-main {
+    padding-bottom: 24px;
+    padding-top: 31px;
+  }
+
+  .footer-menu {
+    > li {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      > a {
+        margin-bottom: 3px;
+      }
+    }
+
+    ul {
+      margin-bottom: 16px;
+
+      li {
+        padding-bottom: 1px;
+        padding-top: 1px;
+      }
+    }
+  }
+
+  .footer-info {
+    .footer-title {
+      margin-bottom: 5px;
+    }
+  }
+
+  .footer-address {
+    max-width: 225px;
+  }
+
+  //footer-bottom
+  .footer-logo {
+    padding-top: 26px;
+  }
+
+  .footer-terms {
+    padding-left: 15px;
+    padding-top: 13px;
+  }
+
+  .footer-planting {
+    padding-top: 20px;
+
+    img {
+      height: auto;
+      width: 165px;
+    }
+  }
+}

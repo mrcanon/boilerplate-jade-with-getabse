@@ -1,0 +1,90 @@
+extends layouts/full-width.jade
+mixin title(text, classextent)
+  h3.title-main(class="#{classextent}")
+    a(href="#", title="#{text}" ) #{text}
+mixin viewmore(link)
+  a.view-more(href="#{link}", title="view more") View more
+mixin linkshop(title, link)
+  li.shopping-item
+    a.shopping-link(href="#{link}")
+      img.shopping-img(src="assets/images/bg_shopping.jpg", alt="bg")
+      span #{title}
+mixin newitem(title, srcimg, link)
+  li.newevent-item
+    a.link-img(href="#{link}", title="#{title}" )
+      img.newevent-img(src="#{srcimg}", alt="#{title}", width="152", height="108")
+    a.newevent-link(href="#{link}") #{title}
+mixin swiper(link, title, summary)
+  article.swiper-slide
+    .swiper-wrap
+      h3.swiper-heading
+        span.swiper-title #{title}
+      p.swiper-summary
+        i.swiper-icon.fa.fa-newspaper-o(aria-hidden="true")
+        span.swiper-text #{summary}
+    a.swiper-cover(href="#{link}", title="#{title}") #{title}
+block head
+  +head(
+  'title',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social' 
+  )
+block css
+  = "\n"
+  | <!--build:css assets/css/swiper.min.css-->
+  | <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.min.css">
+  = "\n"
+  | <!-- endbuild -->
+  = "\n"
+block banner
+  .swiper-container
+    .swiper-wrapper
+      +swiper('#', 'AEON Tan Phu Celadon', 'AEONMALL cooperates in the building of communities')
+      +swiper('#', 'AEON Binh Duong Canary', 'AEONMALL cooperates in the building of communities')
+      +swiper('#', 'AEON Binh Tan', 'AEONMALL cooperates in the building of communities')
+      +swiper('#', 'AEON Long Bien', 'AEONMALL cooperates in the building of communities')
+    .swiper-pagination
+    i.fa.fa-angle-right.swiper-arrow-next.none.block-m
+    i.fa.fa-angle-left.swiper-arrow-prev.none.block-m
+  ///.swiper-container
+ = '\n'
+block content
+  .row
+    .col-12.col-1-3-l.col-1-3-xl
+      .welcome.main-box(data-mh="feature")
+        +title("Welcome to AEON", "")
+        .welcome-content
+          a(href="#", title="Welcome to AEON" )
+            img.welcome-img(src="assets/images/data/welcome.jpg", alt="Welcome to AEON", width="500", height="172")
+          p.welcome-desc AEON MALL cooperates in the building of communities that are exciting, fun to live in and vibrant. We will use our skills to bring new value..
+          +viewmore("#")
+    .col-12.col-1-3-l.col-1-3-xl
+      .shopping.main-box(data-mh="feature")
+        +title("Our Shopping", "")
+        .shopping-content
+          ul.shopping-address
+            +linkshop("AEON Tân Phú Celadon","#")
+            +linkshop("AEON Bình Dương Canary","#")
+            +linkshop("AEON Bình Tân","#")
+            +linkshop("AEON Long Biên","#")
+          +viewmore("#")
+    .col-12.col-1-3-l.col-1-3-xl
+      .newevent.main-box(data-mh="feature")
+        +title("News & Events", "")
+        .newevent-content
+          ul.newevent-list
+            +newitem("Shopping Center in Vietnam namely AEON Binh Duong Canary", "assets/images/data/new-event-1.jpg", "#")
+            +newitem("Aiming to become a community base that brings better tomorrow ", "assets/images/data/new-event-2.jpg", "#")
+            +newitem("Hoping to Nurture the Youth Who Will Create the Greener Tomorrow", "assets/images/data/new-event-3.jpg", "#")
+          +viewmore("#")
+
+
+block script
+  | <!--build:js assets/js/vendor/jquery.swiper.js-->
+  | <script src="bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
+  | <!-- endbuild -->
+  = '\n'

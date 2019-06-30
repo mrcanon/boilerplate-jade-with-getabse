@@ -1,0 +1,90 @@
+mixin menu(link,title, current)
+	li(class="#{current}")
+		a(href="#{link}", title="#{title}")  !{title}
+mixin title(title, link)
+		a(href="#{link}") #{title}
+footer.footer#footer
+	.container
+		.footer-main
+			.row
+				ul.footer-menu#footer-menu
+					li.menu-item-has-children
+						+title("Company", "#","")
+						ul.sub-menu
+							+menu("#", "Introduction","")
+							+menu("#", "Message","")
+							+menu("#", "History","")
+							+menu("#", "Philosophy","")
+							+menu("#", "Plan for new shopping malls","")
+					///sub-menu
+					= '\n'
+					li.menu-item-has-children
+						+title("Shopping malls", "#","")
+						ul.sub-menu
+							+menu("#", "AEON Tân Phú Celadon","")
+							+menu("#", "AEON Bình Dương Canary","")
+							+menu("#", "AEON Bình Tân","")
+							+menu("#", "AEON Long Biên","")
+					///sub-menu
+					= '\n'
+					li.menu-item-has-children
+						+title("News & events", "#","")
+						ul.sub-menu
+							+menu("#", "Promotions","")
+							+menu("#", "Events","")
+							+menu("#", "News","")
+							+menu("#", "Social activities","")
+					///sub-menu
+					= '\n'
+					li.menu-item-has-children
+						+title("Recruit", "#","")
+						ul.sub-menu
+							+menu("#", "Employment opportunity ","")
+							+menu("#", "Intern Opportunity","")
+					///sub-menu
+					= '\n'
+					li
+						a.footer-level1.footer-title--border(href="#",title="contact") Contact
+					///sub-menu
+					= '\n'
+				///.footer-menu
+				= '\n'
+			hr.footer-hr.none-m
+			.row
+				.col-12.col-1-2-m.col-1-4-xl
+					.footer-info
+						h5.footer-title Head Office
+						.footer-info-contact
+							p 3<sup>rd</sup> fIoor, East Office, AEONMALL Long Bien, No. 27 Co Linh Road, Long Bien Ward, Long Bien District., Hanoi
+							p Tel: (84-4) 3944 9815<br> Fax: (84-4) 3944 9816<br> Tax code: 0106099581
+					///.footer-info
+				= '\n'
+				.col-12.col-1-2-m.col-1-4-xl
+					.footer-info
+						h5.footer-title Ho Chi Minh Office
+						.footer-info-contact
+							p Room 2202.B, floor 22<sup>nd</sup> LIM Tower, No. 9-11 Ton Duc Thang Street, Ben Nghe Ward, District 1, HCM City
+							p Tel: (84-8) 3829 5370<br> Tel: (84-8) 3829 5377
+					///.footer-info
+				= '\n'
+		///.footer-main
+		= '\n'
+		.footer-bottom
+			.row
+				.col-12.col-1-3-m.col-2-xl
+					.footer-logo
+						img(src="assets/images/logo-footer.png", alt="logo", width="164", height="23")
+				.col-12.col-1-3-m.col-8-xl
+					.footer-terms
+						ul.terms-menu
+							li
+								a(href="#", title="Terms of services") Terms of services
+						.terms-copyright Copyright @ AEONMALL VIETNAM CO.,LTD
+				.col-12.col-1-3-m.col-2-xl.right-m
+					.footer-planting
+						img(src="assets/images/logo-planting.png", alt="logo planting",width="143", height="29")
+		///.footer-bottom
+		= '\n'
+		a.back-top(href="#header", title="back to top", data-action="scroll")
+			i.fa.fa-chevron-up(aria-hidden="true")
+		///.back-top

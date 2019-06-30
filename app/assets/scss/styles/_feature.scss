@@ -1,0 +1,208 @@
+.main {
+  padding-bottom: 15px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.title-main {
+  margin-bottom: 18px;
+  text-transform: uppercase;
+
+  a {
+    color: $base-h3-color;
+    line-height: 28px;
+    text-decoration: none;
+  }
+}
+
+.main-box {
+  border: 1px solid $color-gray-light;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 17px 25px 23px;
+}
+
+.view-more {
+  color: $color-primary;
+  float: right;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+//welcome
+.welcome {
+  margin-top: 3px;
+}
+
+.welcome-img {
+  border: 1px solid $color-gray-light;
+}
+
+.welcome-content {
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.welcome-desc {
+  line-height: 22px;
+  margin-bottom: 19px;
+  margin-top: 20px;
+}
+
+//Our shopping
+.shopping-content {
+  margin-bottom: 20px;
+}
+
+.shopping-address {
+  list-style: none;
+  margin: -1px -1px 20px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+.shopping-item {
+  float: left;
+  padding: 1px;
+  width: 50%;
+}
+
+.shopping-link {
+  color: $color-white;
+  display: block;
+  font-size: 13px;
+  height: 100%;
+  line-height: 18px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+
+  &::after {
+    background: $color-primary;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background .3s ease-in-out;
+    width: 100%;
+  }
+
+  span {
+    @include center-center (true, true);
+    width: 90%;
+    z-index: 2;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-white;
+
+    &::after {
+      background: $color-primary-opacity-70;
+    }
+  }
+}
+
+.shopping-img {
+  width: 100%;
+}
+
+// News events
+.newevent-list {
+  list-style: none;
+  margin-bottom: 7px;
+  margin-top: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.newevent-item {
+  border-bottom: 1px solid $color-gray-light;
+  overflow: hidden;
+  padding-bottom: 6px;
+  padding-top: 14px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.newevent-img {
+  border: 1px solid $color-gray-light;
+  float: left;
+  width: 80px;
+}
+
+.newevent-link {
+  display: block;
+  float: right;
+  line-height: 21px;
+  padding-left: 17px;
+  text-decoration: none;
+  width: calc(100% - 80px);
+}
+
+//Breckpoint M
+@include breakpoint(m) {
+  .welcome {
+    margin-top: 0;
+  }
+
+  .shopping-item {
+    transition: background .3s ease-in-out;
+
+    a {
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+@include breakpoint(m) {
+  .main {
+    padding-bottom: 40px;
+    padding-top: 30px;
+  }
+
+  .title-main {
+    margin-bottom: 20px;
+  }
+
+  //welcome
+  .welcome-desc {
+    margin-bottom: 26px;
+    margin-top: 26px;
+  }
+
+  //our shopping
+  .shopping-address {
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-top: -2px;
+  }
+
+  .shopping-item {
+    padding: 2px;
+  }
+
+  //new envent
+  .newevent-list {
+    margin-bottom: 12px;
+  }
+
+  .newevent-item {
+    padding-top: 12px;
+  }
+}

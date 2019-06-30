@@ -1,0 +1,30 @@
+// ==========================================================================
+// Base – Tables
+// ==========================================================================
+caption {
+  border-bottom: 1px solid $base-caption-border-color;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: normal;
+  padding: 10px;
+  text-align: left;
+}
+
+table {
+  @include font-size($base-font-size - 2);
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+
+  thead,
+  tbody,
+  tfoot {
+    td,
+    th {
+      border-bottom: 1px solid $base-table-border-color;
+      padding: 10px;
+    }
+  }
+}

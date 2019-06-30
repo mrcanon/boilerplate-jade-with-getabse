@@ -1,0 +1,45 @@
+mixin menu(link, title, current)
+  if current != ""
+    li(class="#{current}")
+      a(href="#{link}", title="#{title}") !{title}
+  else
+    li
+      a(href="#{link}", title="#{title}") !{title}
+
+header.header#header
+  .container
+    a.header-menu#header-menu(href="#header-nav", title="Menu")
+      i.fa.fa-bars(aria-hidden="true")
+    .header-logo
+      a.header-link(href="#", title="Aeon Mall")
+        img.header-media(src="assets/images/logo.png", alt="Logo Aeon Mall", width="260", height="36")
+    ///.header-logo
+    = '\n'
+    nav.header-lang
+      ul.nav-lang
+        li
+          a.is-active(href="#", title="English")
+            img(src="assets/images/en.jpg", alt="English", width="52", height="32")
+        li
+          a(href="#", title="Việt Nam")
+            img(src="assets/images/vi.jpg", alt="Việt Nam", width="52", height="32")
+    ///.header-lang
+    = '\n'
+    .clear.none-l
+    nav.header-nav#header-nav.none.block-l
+      ul.nav-main
+        +menu("#", "Home", "")
+        +menu("#", "Company", "")
+        +menu("#", "Shopping malls", "")
+        li.menu-item-has-children.current-menu-item
+          a(href="#", title="News & Events") News & Events
+          ul.sub-menu
+            +menu("#", "Promotions", "")
+            +menu("#", "Events", "current-menu-item")
+            +menu("#", "News", "")
+            +menu("#", "Social Activity", "")
+        +menu("#", "Recruit", "")
+        +menu("#", "Contact", "")
+    ///.header-nav
+///.header
+= '\n'

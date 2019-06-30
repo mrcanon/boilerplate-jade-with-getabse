@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aeon Mall</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .logo{
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    .title{
+      color: #333;
+      font-family: Arial;
+      margin: 30px 10px 0 10px;
+      font-size: 36px;
+      text-transform: uppercase;
+    }
+    .table{
+      position: absolute;
+      display: table;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+    }
+    .table-cell{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .comming-soon{
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 450px) {
+      .title{
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="table">
+    <div class="table-cell">
+      <div class="comming-soon">
+        <img class="logo" src="assets/images/logo-comming-soon.png" alt="under construction">
+        <h1 class="title">Under construction</h1>
+      </div>
+    </div><!-- /.table-cell -->
+  </div><!-- /.wraper-table -->
+</body>
+</html>

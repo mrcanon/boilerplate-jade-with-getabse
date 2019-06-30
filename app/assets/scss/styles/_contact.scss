@@ -1,0 +1,256 @@
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.steps-item {
+  margin-bottom: 11px;
+
+  &.is-active {
+
+    .steps-title {
+      background: $color-gray-light4;
+    }
+  }
+}
+
+.steps-title {
+  background: $color-gray-lighter;
+  display: block;
+  line-height: 22px;
+  margin: 0;
+  padding: 13px 20px 13px 50px;
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    border-color: transparent $color-white;
+    border-style: solid;
+    border-width: 0 18px 24px 0;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+  }
+
+  &::after {
+    border-color: transparent transparent $color-white;
+    border-style: solid;
+    border-width: 0 0 24px 18px;
+    bottom: 0;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+    z-index: 9;
+  }
+}
+
+.steps-number {
+  background-color: $color-primary;
+  border-radius: 100%;
+  color: $color-white;
+  font-weight: 400;
+  height: 22px;
+  left: 15px;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  width: 22px;
+}
+
+.steps-text {
+  color: $base-h3-color;
+  text-transform: uppercase;
+}
+
+//Form
+.contact-form {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.contact-control {
+  background-color: $color-gray-lighter;
+}
+
+.contact-group {
+  margin-bottom: 25px;
+
+  input,
+  select,
+  textarea {
+    border: 1px solid $color-gray-light;
+    width: 100%;
+  }
+}
+
+.contact-label {
+  color: $base-h3-color;
+  display: block;
+  margin-bottom: 3px;
+
+  span {
+    color: $color-red;
+  }
+}
+
+.btn-submit,
+.btn-confirm,
+.btn-back {
+  border: 0;
+  color: $color-white;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-submit,
+.btn-confirm {
+  background: $color-primary;
+
+  &:hover {
+    background: darken($color-primary, 10%);
+  }
+}
+
+.btn-back {
+  background: $color-three;
+
+  &:hover {
+    background: darken($color-three, 10%);
+  }
+}
+
+.failed {
+
+  .contact-control {
+    background: $color-white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 5px;
+}
+
+@include breakpoint(m) {
+  .contact-form {
+    margin: 20px auto 30px;
+    max-width: 750px;
+  }
+
+  .contact-group {
+    margin-bottom: 13px;
+  }
+
+  .contact-action {
+    @include clearfix;
+  }
+
+  .contact-label {
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .btn-submit,
+  .btn-confirm,
+  .btn-back {
+    float: right;
+    margin-left: 10px;
+    width: 136px;
+  }
+}
+
+@include breakpoint(l) {
+  .steps {
+    margin: 0 -4px;
+  }
+
+  .steps-item {
+    float: left;
+    padding: 0 4px;
+    position: relative;
+    width: percentage(1/3);
+
+    &:not(:first-child) {
+
+      &::before {
+        border-color: transparent $color-gray-lighter;
+        border-style: solid;
+        border-width: 0 18px 27px 0;
+        content: '';
+        height: 0;
+        left: -14px;
+        position: absolute;
+        top: 0;
+        width: 0;
+      }
+
+      &::after {
+        border-color: transparent transparent $color-gray-lighter;
+        border-style: solid;
+        border-width: 0 0 27px 18px;
+        bottom: 0;
+        content: '';
+        height: 0;
+        left: -14px;
+        position: absolute;
+        width: 0;
+        z-index: 9;
+      }
+
+      &.is-active {
+
+        &::before {
+          border-color: transparent $color-gray-light4;
+        }
+
+        &::after {
+          border-color: transparent transparent $color-gray-light4;
+        }
+      }
+    }
+  }
+
+  .steps-title {
+    padding: 16px 30px 16px 70px;
+
+    &::before {
+      border-width: 0 18px 27px 0;
+    }
+
+    &::after {
+      border-width: 0 0 27px 18px;
+    }
+  }
+
+  .steps-number {
+    height: 30px;
+    left: 20px;
+    line-height: 30px;
+    top: 12px;
+    width: 30px;
+  }
+}
+
+//breakpoint xl
+@include breakpoint(xl) {
+  .steps-title {
+    padding-left: 115px;
+  }
+
+  .steps-number {
+    left: 65px;
+  }
+}

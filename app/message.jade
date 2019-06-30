@@ -1,0 +1,54 @@
+extends layouts/full-width.jade
+block head
+  +head(
+  'Message',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+block banner 
+  .banner
+    .container
+      .banner-content
+        .banner-wrap
+          .banner-summary
+          .banner-heading
+            h2.banner-tittle Introduction
+  ///.banner
+  = '\n'
+
+block content
+  ul.nav-breadcrumb
+    li
+      a(href="#", title="Home") Home
+    li
+      a(href="#", title="Company") Company
+    li
+      span Introduction
+  ///.nav-breadcrumb
+  = '\n'
+  article.post
+    h1.post-heading Corporate profile
+    .row
+      .col-12.col-3-m
+        figure.post-media
+          img.post-image(src="assets/images/data/post/1.jpg", alt="AEONMALL Co.,Ltd.", width="532", height="362")
+          figcaption.post-caption
+            span.post-name AEONMALL Co.,Ltd.
+            span.post-brief General Director of AEONMALL VIETNAM CO.,LTD
+
+      .col-12.col-9-m
+        h4.post-hightlight Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent odio justo, lacinia vitae nunc non, iaculis fermentum tortor. Donec cursus ullamcorper ullamcorper.
+
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent odio justo, lacinia vitae nunc non, iaculis fermentum tortor. Donec cursus ullamcorper ullamcorper. Vestibulum nisi nisl, accumsan et nunc a, gravida sodales sem. Pellentesque nisl sem, faucibus et eleifend vel, tempor ut leo. Praesent lobortis eleifend risus a lobortis. Proin nec cursus ex. Aliquam quam ex, posuere eget felis a, interdum feugiat felis. Aliquam bibendum tellus quis purus lobortis, at dignissim augue mollis. Proin vestibulum eu quam sit amet vulputate. Mauris id magna venenatis, vulputate justo vitae, elementum nulla. Integer posuere augue ut purus ornare vehicula.
+
+        p Donec bibendum eget eros eget ullamcorper. Pellentesque pellentesque sed est in ultricies. Vivamus at dapibus lectus, non finibus ante. Nulla vel ex sit amet tortor gravida laoreet id in tellus. Donec eleifend enim augue, a consectetur nulla volutpat id. Ut ornare purus libero, nec convallis est elementum vitae. Nulla nisi quam, vestibulum eu enim quis, aliquam placerat turpis. Morbi pulvinar vel felis non blandit. Integer nec lorem sed dolor interdum dapibus. Praesent eu erat id arcu pretium facilisis. Duis ut laoreet nisl. Suspendisse mattis bibendum dolor id semper. Nulla facilisi. Morbi sollicitudin facilisis nunc. Quisque ut semper ex. Maecenas nec mi vitae odio interdum pellentesque.
+
+        p Etiam magna erat, pretium ac ornare vel, dignissim sed arcu. Curabitur at dolor ac massa vestibulum porta sit amet eget sapien. Phasellus nec felis suscipit, scelerisque ante eu, viverra orci. Maecenas ultricies sit amet orci eget fringilla. Quisque bibendum imperdiet lorem, aliquet vulputate tortor imperdiet id. Praesent tempor convallis felis sit amet mattis. Praesent vitae dolor ut nisl egestas pharetra at vitae turpis. In dapibus ligula eu sagittis lacinia.
+
+        p Aenean eros eros, rhoncus ut mauris quis, mattis hendrerit urna. Phasellus faucibus tincidunt vulputate. Ut vulputate leo nunc, vel porta velit varius a. Duis finibus pretium velit, sodales porttitor tortor sollicitudin eu. Donec neque libero, sodales et urna consequat, luctus lacinia quam. Donec et condimentum sem. Nullam porta fringilla euismod. Cras iaculis, tortor sed ullamcorper sodales, mi massa tristique enim, id fermentum mi nisl lobortis odio. Aenean vitae quam orci.
+block script

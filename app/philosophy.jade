@@ -1,0 +1,92 @@
+extends layouts/full-width.jade
+block head
+	+head(
+	'Philosophy',
+	'description',
+	'keywords',
+	'description_social',
+	'image_social',
+	'url_social',
+	'type_social'
+	)
+block css
+block banner
+	.banner
+		.container
+			.banner-content
+				.banner-wrap
+					.banner-summary
+					.banner-heading
+						h2.banner-tittle Philosophy
+	///.banner
+	= '\n'
+
+block content
+	ul.nav-breadcrumb
+		li
+			a(href="#", title="Home") Home
+		li
+			a(href="#", title="Company") Company
+		li
+			span Philosophy
+	///.nav-breadcrumb
+	= '\n'
+	article.post
+		h2.post-heading Basic Philosophy
+		.row
+			.col-12.col-3-m.col-3-l.col-3-xl
+				figure.post-media
+					img.post-image(src="assets/images/data/post/philosophy-1.jpg", alt="History", width="532", height="362")
+
+			.col-12.col-9-m.col-9-l.col-9-xl
+				.post-content
+					h4.post-hightlight Customer First.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies dui arcu, in tincidunt massa consectetur porttitor. Integer semper ante ante, sed malesuada augue tristique nec. Quisque sed nibh in libero pharetra tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec augue commodo, condimentum nisi vitae, eleifend lorem.
+	///.post
+	= '\n'
+	article.post
+		h2.post-heading Management Philosophy
+		.row
+			.col-12.col-3-m.col-3-l.col-3-xl
+				figure.post-media
+					img.post-image(src="assets/images/data/post/philosophy-2.jpg", alt="History", width="532", height="362")
+
+			.col-12.col-9-m.col-9-l.col-9-xl
+				.post-content
+					h4.post-hightlight AEON MALL is a Life Design Developer that works with communities and produces ways of living for the future.
+					p
+						strong What is Life Design?
+						<br> Life Design involves producing ways for people to live in the future - work that drives AEON MALL to create and nurture opportunities for people to meet and engage in cultural activities. Beyond the development of commercial facilities, this work requites our company to expand ways for us to serve people throughout various stages of their lives.
+	///.post
+	= '\n'
+	article.post
+		h2.post-heading Management Vision
+		.row
+			.col-12.col-3-m.col-3-l.col-3-xl
+				figure.post-media
+					img.post-image(src="assets/images/data/post/philosophy-3.jpg", alt="History", width="532", height="362")
+
+			.col-12.col-9-m.col-9-l.col-9-xl
+				.post-content
+					h4.post-hightlight Becoming a company that will touch the hearts of 5 billion visitors throughout Asia.
+					p Ultimately, our challenge is to be consistent in localization to enhance the attractive aspects of various regions by working in tandem with partners.
+					p As Life Design Producers, we will go beyond working in a conventional commercial context and keep our company growing by opening up business opportunities to produce future ways of living.
+					p We will solidify and strengthen our financial and business foundations by taking full advantage of our company's assets, including our worldwide malls and capabilities to continue our growth.
+					p We are a company of professionals that continue to innovate.
+					p We see and consider life from customers’ perspectives so that we can share the best, most memorable moments of life with those customers.
+	///.post
+	= '\n'
+	article.post
+		h2.post-heading Corporate Slogan
+		.row
+			.col-12.col-3-m.col-3-l.col-3-xl
+				figure.post-media
+					img.post-image(src="assets/images/data/post/philosophy-4.jpg", alt="History", width="532", height="362")
+
+			.col-12.col-9-m.col-9-l.col-9-xl
+				.post-content
+					p
+						img(src="assets/images/data/post/star.png", alt="", width="422", height="114")
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies dui arcu, in tincidunt massa consectetur porttitor. Integer semper ante ante, sed malesuada augue tristique nec. Quisque sed nibh in libero pharetra tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec augue commodo, condimentum nisi vitae, eleifend lorem.
+	///.post
+	= '\n'

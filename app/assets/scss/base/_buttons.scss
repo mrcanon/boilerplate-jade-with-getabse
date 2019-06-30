@@ -1,0 +1,49 @@
+// ==========================================================================
+// Base – Assets
+// ==========================================================================
+
+// Custom Buttons
+.button {
+  background-color: $base-color-gray-lighter;
+  border: 1px solid $base-color-gray-light;
+  color: $base-color-darkder;
+  cursor: pointer;
+  display: inline-block;
+  line-height: normal;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background .3s ease-in-out;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: $base-color-gray-light;
+  }
+}
+
+// .button-primary {
+//   // Add your styles here
+// }
+// .button-secondary {
+//   // Add your styles here
+// }
+
+// Button Styled as Link
+.button-link {
+  background: transparent;
+  border: 0;
+  color: $base-link-color;
+  padding: 0;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: 0;
+  }
+}

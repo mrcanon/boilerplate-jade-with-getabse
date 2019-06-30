@@ -1,0 +1,148 @@
+.promotion {
+  border: 1px solid $color-gray-light;
+  margin-bottom: 21px;
+  margin-top: 17px;
+  padding: 18px 17px;
+
+  p {
+    color: $base-link-hover-color;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+}
+
+.promotion-media {
+  border: 1px solid $color-gray-light;
+  width: 100%;
+}
+
+.promotion-title {
+  margin-bottom: 24px;
+
+  a {
+    color: $base-link-hover-color;
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.promotion-time {
+  border-bottom: 1px solid $color-gray-light;
+  margin-bottom: 9px;
+  margin-top: 25px;
+  padding-bottom: 13px;
+  padding-left: 30px;
+  position: relative;
+  white-space: nowrap;
+
+  &::before {
+    @include fontawesome(22px);
+    color: $color-primary;
+    content: '\f017';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: -1px;
+  }
+}
+
+.promotion-info {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0 0 0 30px;
+  position: relative;
+
+  &::before {
+    @include fontawesome(22px);
+    color: $color-primary;
+    content: '\f124';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 1px;
+  }
+
+  li {
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.promotion-more {
+  text-align: right;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+  }
+}
+
+@include breakpoint(m) {
+  .promotion {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 24px 29px;
+  }
+
+  .promotion-media {
+    margin-top: 5px;
+  }
+
+  .promotion-title {
+    margin-bottom: 20px;
+  }
+
+  .promotion-time {
+    border-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 9px;
+    padding-bottom: 0;
+  }
+
+  .promotion-info {
+    margin-bottom: 0;
+
+    li {
+      padding-bottom: 2px;
+      padding-top: 2px;
+    }
+  }
+
+  .promotion-table {
+    display: table;
+    margin-bottom: 38px;
+    width: 100%;
+  }
+
+  .promotion-row {
+    display: table-row;
+  }
+
+  .promotion-cell {
+    display: table-cell;
+
+    &:first-child {
+      border-right: 1px solid $color-gray-light;
+      padding-right: 20px;
+    }
+
+    &:last-child {
+      padding-left: 24px;
+      width: 1000px;
+    }
+  }
+}

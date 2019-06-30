@@ -1,0 +1,52 @@
+extends layouts/full-width.jade
+block head
+	+head(
+	'Shopping Malls',
+	'description',
+	'keywords',
+	'description_social',
+	'image_social',
+	'url_social',
+	'type_social'
+	)
+block css
+block banner
+	.banner
+		.container
+			.banner-content
+				.banner-wrap
+					.banner-summary
+					.banner-heading
+						h2.banner-tittle Shopping malls
+	///.banner
+	= '\n'
+
+block content
+	ul.nav-breadcrumb
+		li
+			a(href="#", title="Home") Home
+		li
+			a(href="#", title="Company") Company
+		li
+			span Shopping malls
+	///.nav-breadcrumb
+	= '\n'
+	.main-content
+		article.post
+			h2.post-heading Aeon Malls nationwide
+			.shopping
+				img.none-m(src="assets/images/data/shopping/shopping-map-sp.jpg", alt="Shopping malls", width="608", height="836")
+				img.none.block-m(src="assets/images/data/shopping/shopping-map-pc.jpg", alt="Shopping malls", width="1140", height="698")
+				ul.shopping-list
+					li
+						a(href="#", title="AeonMall Long Bien") AeonMall Long Bien
+					li
+						a(href="#", title="AeonMall Tan Phu") AeonMall Tan Phu
+					li
+						a(href="#", title="AeonMall Binh Tan") AeonMall Binh Tan
+					li
+						a(href="#", title="AeonMall Binh Duong") AeonMall Binh Duong
+
+		///.post
+		= '\n'
+

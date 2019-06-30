@@ -1,0 +1,511 @@
+// Bem block element
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// Block Modifier
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Mixin to prefix several properties at once
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: #{$value};
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: #{$value};
+}
+
+// Center-align a block level element
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Center-center a block
+@mixin center-center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ''; // 1
+    display: table; // 2
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Covering Mixin
+@mixin coverer {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+// Font awesome
+@mixin fontawesome($font-size: inherit) {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font: normal normal normal #{$font-size}/1 FontAwesome;
+  text-rendering: auto;
+}
+
+// Triangle helper mixin
+@mixin triangle($direction, $color: #000, $size: 10px) {
+  @if not index(top right bottom left, $direction) {
+    @error 'Direction must be either "top", "right", "bottom" or "left".';
+  }
+  $border-transparent: #{$size} solid transparent;
+  border-#{$direction}: #{$size} solid $color;
+  content: '';
+  height: 0;
+  width: 0;
+  z-index: 2;
+  @if $direction == top or $direction == bottom {
+    border-left:   $border-transparent;
+    border-right:  $border-transparent;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $border-transparent;
+    border-top:    $border-transparent;
+  }
+}
+
+// Mixin to customize scrollbars
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, '#fff',  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    height: $size;
+    width:  $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  // For Internet Explorer
+  //scrollbar-face-color: $foreground-color;
+  //scrollbar-track-color: $background-color;
+}
+
+/// Mixin to customize aspect ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+}
+
+// Transformations
+@mixin scale($ratio...) {
+  @include prefix('transform', scale($ratio), webkit ms o);
+}
+
+@mixin scale-x($ratio) {
+  @include prefix('transform', scaleX($ratio), webkit ms o);
+}
+@mixin scale-y($ratio) {
+  @include prefix('transform', scaleY($ratio), webkit ms o);
+}
+@mixin skew($x, $y) {
+  @include prefix('transform', skewX($x) skewY($y), webkit ms o);
+}
+@mixin translate($x, $y) {
+  @include prefix('transform', translate($x, $y), webkit ms o);
+}
+@mixin translate3d($x, $y, $z) {
+  @include prefix('transform', translate3d($x, $y, $z), webkit);
+}
+@mixin rotate($degrees) {
+  @include prefix('transform', rotate($degrees), webkit ms o);
+}
+@mixin rotate-x($degrees) {
+  @include prefix('transform', rotateX($degrees), webkit ms o);
+}
+@mixin rotate-y($degrees) {
+  @include prefix('transform', rotateY($degrees), webkit ms o);
+}
+@mixin perspective($perspective) {
+  @include prefix('perspective', $perspective, webkit moz);
+}
+@mixin perspective-origin($perspective) {
+  @include prefix('perspective-origin', $perspective, webkit moz);
+}
+@mixin transform-origin($origin) {
+  @include prefix('transform-origin', $origin, webkit moz ms);
+}
+
+// Mixin transition
+@mixin transition($transition...) {
+  @include prefix('transition', $transition, webkit o moz);
+}
+
+// Transition property
+@mixin transition-property($transition-property...) {
+  @include prefix('transition-property', $transition-property, webkit o moz);
+}
+
+// Transition delay
+@mixin transition-delay($delay: .2s) {
+  @include prefix('transition-delay', $delay, webkit o moz);
+}
+
+@mixin transition-timing-function($timing-function) {
+  @include prefix('transition-timing-function', $timing-function, webkit);
+}
+
+// Animations
+@mixin animation($animation) {
+  @include prefix('animation', $animation, webkit o moz);
+}
+
+@mixin transition-transform($transition...) {
+  @include prefix('transition', $transition, webkit moz o)
+}
+
+// User select
+// For selecting text on the page
+
+@mixin user-select($select) {
+  @include prefix('user-select', $select, webkit moz ms);
+}
+
+@mixin appearance {
+  @include prefix('appearance', 'none', webkit moz ms);
+}
+
+// Animation name
+@mixin animation-name($name) {
+  @include prefix('animation-name', $name, webkit o moz);
+}
+
+// Animation duration
+@mixin animation-duration($duration) {
+  @include prefix('animation-name', $duration, webkit o moz);
+}
+
+// Animation delay
+@mixin animation-delay($delay: .3s) {
+  @include prefix('animation-delay', $delay, webkit o moz);
+}
+
+// Animation iteration count
+@mixin animation-iteration-count($iteration-count: 1) {
+  @include prefix('animation-iteration-count', $iteration-count, webkit o moz);
+}
+
+// Animation direction
+@mixin animation-direction($direction) {
+  @include prefix('animation-iteration-count', $direction, webkit o moz);
+}
+
+// Aimation fill mode
+@mixin animation-fill-mode($fill-mode) {
+  @include prefix('animation-fill-mode', $fill-mode, webkit o moz);
+}
+
+// Mixin box resize auto
+@mixin resizable($type: both) {
+  @include prefix('resize', $type, moz); // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden`
+
+@mixin backface-visibility($visibility) {
+  @include prefix('backface-visibility', $visibility, webkit moz);
+}
+
+// Mixin box radius
+@mixin border-radius($radius) {
+  @include prefix('border-radius', $radius, webkit moz);
+}
+
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+// Fix Border Radius Of Iframe On Chrome
+@mixin border-mask {
+  -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC');
+}
+
+// Mixin box shadow
+@mixin box-shadow($shadow...) {
+  @include prefix('box-shadow', $shadow, webkit moz);
+}
+
+// Mixin background size
+@mixin background-size($size: 240px 240px) {
+  @include prefix('background-size', $size, webkit moz o);
+}
+
+@mixin transform($transform) {
+  @include prefix('transform', $transform, webkit moz o ms);
+}
+
+@mixin transform-origin($option) {
+  @include prefix('transform-origin', $option, webkit moz o ms);
+}
+
+@mixin box-sizing($type: content-box) {
+  @include prefix('box-sizing', $type, webkit moz);
+}
+
+//Border by Image
+@mixin border-image($size: 10px, $url: '../images/') {
+  @include prefix('border-image', $url, webkit moz o);
+  border: #{$size} solid transparent;
+}
+
+// Placeholder text
+@mixin placeholder($color: #999) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+//Background By Sprite Images
+@mixin sprite($position, $bg-color: transparent, $size: 480px 320px) {
+  @include background-size(#{$size});
+  background: #{$bg-color} url('../images/sprite.png') no-repeat #{$position};
+}
+//Convert Pixel To Em
+@function em($pixels, $context: 16) {
+  @return #{$pixels/$context}em;
+}
+
+// CSS3 Content Columns
+@mixin content-columns($column-count, $column-gap: 2) {
+  @include prefix('column-count', $column-count, webkit moz);
+  @include prefix('column-gap', $column-gap, webkit moz);
+}
+
+// Contextual backgrounds
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+
+  a#{$parent} {
+
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+// Optional hyphenation
+@mixin hyphens($mode: auto) {
+  @include prefix('hyphens', $mode, webkit o moz ms);
+  word-wrap: break-word;
+}
+
+// Labels
+@mixin label-variant($color) {
+  background-color: $color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+// Reset filters for IE
+//
+// When you need to remove a gradient background, do not forget to use this to reset
+// the IE filter for IE9 and below.
+
+@mixin reset-filter {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+// reset text
+@mixin reset-text {
+  // We deliberately do NOT reset font-size.
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: $base-line-height;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+@mixin img-responsive($display: block) {
+  display: $display;
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// Typography
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+
+  a#{$parent} {
+
+    &:hover,
+    &:focus {
+      color: darken($color, 10%);
+    }
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Breakpoint sizes
+// Example usage @include breakpoint(x) { ... }; - where x is the device
+@mixin breakpoint($bp) {
+  @if $bp == xl {
+    @media only screen and (min-width: $breakpoint-xl) { @content ; }
+  } @else if $bp == l {
+    @media only screen and (min-width: $breakpoint-l) { @content ; }
+  } @else if $bp == m {
+    @media only screen and (min-width: $breakpoint-m) { @content ; }
+  }
+}
+
+// Font sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include font-size(18);
+@mixin font-size ($size) {
+  $px-value: ($size);
+  $rem-value: $size / 16;
+  //font-size: $remValue + rem;
+  font-size: $px-value + px;
+}
+
+// Line height sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include line-height(22);
+@mixin line-height ($size) {
+  $px-value: ($size);
+  $rem-value: $size / 16;
+  line-height: $px-value + px;
+}
+
+// Animations
+// Example Usage @mixin animation(1s);
+@mixin animation($duration: 1s) {
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+// Arrows
+// Example Usage @mixin arrow(4px, #000, up);
+@mixin arrow ($size: 5px, $color: #333, $direction: right) {
+  position: relative;
+
+  &::before {
+    border: $size solid transparent;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @if $direction == right {
+      border-left-color: $color;
+      left: 100%;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    } @else if $direction == left {
+      border-right-color: $color;
+      left: 0;
+      top: 50%;
+      transform: translate3d(-100%, -50%, 0);
+    } @else if $direction == down {
+      border-top-color: $color;
+      left: 50%;
+      top: 100%;
+      transform: translate3d(-50%, 0, 0);
+    } @else if $direction == up {
+      border-bottom-color: $color;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, -100%, 0);
+    }
+  }
+}

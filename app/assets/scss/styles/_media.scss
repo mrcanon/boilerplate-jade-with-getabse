@@ -1,0 +1,51 @@
+.post-media {
+  border: 1px solid $color-gray-light;
+  margin: 0 0 26px;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-caption {
+  padding: 16px 18px;
+}
+
+.post-name {
+  color: $base-link-hover-color;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.post-brief {
+  display: block;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+@include breakpoint(m) {
+  .post-media {
+    margin-right: 2 * $grid-gutter-m;
+  }
+}
+
+@include breakpoint(m) {
+  .post-media {
+    margin: 0;
+  }
+
+  .post-caption {
+    padding: 8px 9px;
+  }
+}
+
+@include breakpoint(l) {
+  .post-media {
+    margin: 0 30px 0 0;
+  }
+
+  .post-caption {
+    padding: 16px 18px;
+  }
+}

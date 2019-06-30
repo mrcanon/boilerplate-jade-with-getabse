@@ -1,0 +1,79 @@
+extends layouts/full-width.jade
+block head
+	+head(
+	'History',
+	'description',
+	'keywords',
+	'description_social',
+	'image_social',
+	'url_social',
+	'type_social'
+	)
+block css
+block banner
+	.banner
+		.container
+			.banner-content
+				.banner-wrap
+					.banner-summary
+					.banner-heading
+						h2.banner-tittle Introduction
+	///.banner
+	= '\n'
+
+block content
+	ul.nav-breadcrumb
+		li
+			a(href="#", title="Home") Home
+		li
+			a(href="#", title="Company") Company
+		li
+			span History
+	///.nav-breadcrumb
+	= '\n'
+	article.post
+		h2.post-heading The following is a history of AEON MALL
+		.row
+			.col-12.col-8-s.col-3-l.col-3-xl
+				figure.post-media
+					img.post-image(src="assets/images/data/post/history.jpg", alt="History", width="532", height="362")
+					figcaption.post-caption
+						span.post-name HISTORY
+
+			.col-12.col-4-s.col-9-l.col-9-xl
+				.post-item
+					h4 November 1911
+					p The Company was founded.
+				.post-item
+					h4 August 1973
+					p Started non-life insurance agency business in partnership with five non-life insurance companies.
+				.post-item
+					h4 December 1974
+					p Started life insurance agency business as an agent for American Family Life Assurance Company of Columbus Japan Branch.
+				.post-item
+					h4 May 1979
+					p Increased the capital to 98 million yen by a paid-in capital increase through a rights offering.
+				.post-item
+					h4 September 1989
+					p Increased the capital to 4 billion yen.
+				.post-item
+					h4 October 1989
+					p Changed the corporate name from JUSCO Kosan Co., Ltd. to AEON Kosan Co., Ltd. and began developing and managing large-scale SCs.
+				.post-item
+					h4 November 1992
+					p Opened AEON MALL Tsugaru Kashiwa.
+				.post-item
+					h4 February 1993
+					p Established Shimoda Town Co., Ltd. (to develop AEON MALL Shimoda).
+				.post-item
+					h4 September 1993
+					p Opened AEON MALL Akita and AEON MALL Futtsu.
+				.post-item
+					h4 April 1995
+					p Opened AEON MALL Shimoda.
+				.post-item
+					h4 November 1996
+					p Opened AEON MALL Suzuka.<br><br>...
+				.post-item
+					em *The name of shopping mall was standardized to "AEON MALL" in 2007.
+block script

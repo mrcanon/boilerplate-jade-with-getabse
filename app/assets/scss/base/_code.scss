@@ -1,0 +1,23 @@
+// ==========================================================================
+// Base – Code
+// ==========================================================================
+code,
+kbd,
+pre,
+samp {
+  @include font-size($base-code-font-size);
+  @include line-height($base-code-line-height);
+  background-color: $base-code-background-color;
+  color: $base-code-color;
+  font-family: $base-code-font-family;
+  font-weight: normal;
+  padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre {
+  border: 1px solid $base-code-border-color;
+  overflow: auto;
+  padding: 10px;
+}

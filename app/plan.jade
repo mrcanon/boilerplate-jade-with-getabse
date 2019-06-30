@@ -1,0 +1,93 @@
+extends layouts/full-width.jade
+mixin planheadrow(arr)
+  .plan-row
+    .plan-cell(data-title="Name")
+      span #{arr[0]}
+    .plan-cell(data-title="Shop to be scheduled")
+      span #{arr[1]}
+    .plan-cell(data-title="Residence")
+      span #{arr[2]}
+mixin planitem(url, desc)
+  .col-12.col-4-m
+    .plan-media
+      img.post-image(src="#{url}", alt="Plan", width="532", height="362")
+    .plan-content
+      p #{desc}
+block head
+  +head(
+  'Plan',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+block banner
+  .banner
+    .container
+      .banner-content
+        .banner-wrap
+          .banner-summary
+          .banner-heading
+            h2.banner-tittle Coming Up
+  ///.banner
+  = '\n'
+block content
+  ul.nav-breadcrumb
+    li
+      a(href="#", title="Home") Home
+    li
+      a(href="#", title="Company") Company
+    li
+      span Comning up
+  ///.nav-breadcrumb
+  = '\n'
+  .main-content
+    article.post
+      h2.post-heading AEONMall - Ha Noi
+      .plan-wrap
+        .plan-table
+          .plan-row
+            .plan-cell Name
+            .plan-cell Shop to be scheduled
+            .plan-cell Residence
+          +planheadrow(['AEONMALL - Long Bien', '2015', 'Long Bien District'])
+      .row.row-plan
+        +planitem('assets/images/data/plan/plan-1.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-2.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-3.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+    ///.post
+    = '\n'
+    article.post
+      h2.post-heading AEON Mall - Ho chi minh
+      .plan-wrap
+        .plan-table
+          .plan-row
+            .plan-cell Name
+            .plan-cell Shop to be scheduled
+            .plan-cell Residence
+          +planheadrow(['AEONMALL - Tan Phu Celadon', '2014', 'Tan Phu District'])
+          +planheadrow(['AEONMALL - Binh Tan', '2015', 'Binh Tan District'])
+      .row.row-plan
+        +planitem('assets/images/data/plan/plan-4.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-5.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-6.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+    ///.post
+    = '\n'
+    article.post
+      h2.post-heading AEONMall - binh duong
+      .plan-wrap
+        .plan-table
+          .plan-row
+            .plan-cell Name
+            .plan-cell Shop to be scheduled
+            .plan-cell Residence
+          +planheadrow(['AEONMALL - Binh Duong Canary', '2014', 'Binh Duong District'])
+      .row.row-plan
+        +planitem('assets/images/data/plan/plan-7.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-8.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+        +planitem('assets/images/data/plan/plan-9.jpg', 'Phasellus ultricies dui arcu, in tincidunt massa libero pharetra tempus.')
+    ///.post
+    = '\n'

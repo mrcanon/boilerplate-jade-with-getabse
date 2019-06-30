@@ -1,0 +1,82 @@
+extends layouts/full-width.jade
+mixin p(title, text)
+  p <strong>!{title}</strong> !{text}
+block head
+  +head(
+  'Introduction',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+block banner 
+  .banner
+    .container
+      .banner-content
+        .banner-wrap
+          .banner-summary
+          .banner-heading
+            h2.banner-tittle Introduction
+  ///.banner
+  = '\n'
+
+block content
+  ul.nav-breadcrumb
+    li
+      a(href="#", title="Home") Home
+    li
+      a(href="#", title="Company") Company
+    li
+      span Introduction
+  ///.nav-breadcrumb
+  = '\n'
+  article.post
+    h2.post-heading Corporate profile
+    .row
+      .col-12.col-3-m.col-3-l.col-3-xl
+        figure.post-media
+          img.post-image(src="assets/images/data/post/1.jpg", alt="AEONMALL Co.,Ltd.", width="532", height="362")
+          figcaption.post-caption
+            span.post-name AEONMALL Co.,Ltd.
+
+      .col-12.col-9-m.col-9-l.col-9-xl
+        .post-content
+          p AEONMALL is a specialist shopping mall developer. Our philosophy of putting the customer first has guided our continuing efforts to create malls that enhance the quality of life, stimulate local economic activity and contribute to community life and culture. AEONMALL cooperates in the building of communities that are exciting, fun to live in and vibrant. We will use our skills to bring new value and attractiveness to communities, society and customers.
+          h3.post-title Overview
+          +p("Company Name", "<br>AEON MALL Co., Ltd.")
+          +p("Headquarters", "<br>1-5-1 Nakase, Mihama-ku, Chiba-shi, Chiba 261-8539, Japan<br>TEL: 81-(43)-212-6450<br>FAX: 81-(43)-212-6737")
+          +p("Representative", "<br>Akio Yoshida, President<br>Date Established<br>November 1911")
+          +p("Capital Stock", "<br>¥ 42,247,000,000 (as of August 2016)<br>Shares of Common Stock Issued<br>227,937,647 (as of August 2016)")
+          +p("Business Activities", "<br>Development of large-scale shopping malls, tenant leasing and operation/management<br>Number of Shopping Malls<br>167")
+          +p("Number of Employees", "<br>2,771(as of August 2016)")
+          p
+            strong Offices<br>
+            em [ Sendai Office]
+            <br>Mitsumaru Building 2F, 3-3-3 Chuo, Aoba-ku, Sendai-shi, Miyagi 980-8442, Japan<br>
+            em [ Nagoya Office ]
+            <br>Aizo building 6F,5-25-1 Meieki, Nakamura-ku, Nagoya-shi Aichi 450-0002,Japan<br>
+            em [ Osaka Office ]
+            <br>Kurabo Annex Building 12F, 2-4-11 Kyutaromachi, Chuo-ku, Osaka-shi, Osaka 541-0056, Japan<br>
+            em [ Hiroshima Office]
+            <br>1-3-52 Danbara-minami, Minami-ku, Hiroshima-shi, Hiroshima 732-0814, Japan<br>
+            em [ Fukuoka Office ]
+            <br>Sankyo Fukuoka Building 5F, 2-9-11 Hakataekiminami, Hakata-ku, Fukuoka-shi, Fukuoka 812-0016, Japan<br>
+            em [ Shanghai Resident Office ]
+            <br>Room 1204, An-Tai Building, 107 ZunyiRoad, Changning District, Shanghai, China P.C.200051<br>
+            em [ Jinan Resident Office ]
+            <br>Room B 1601 YUQUAN SIMPSON HOTEL 68 Luo Yuan Road ,Jinan, China P.C.250063<br>
+            em [ Qingdao Resident Office ]
+            <br>Room 1903, Floor 19, Cosco Building B, No.61 Hongkong Middle Road, QingDao, China 266071<br>
+            em [ Hangzhou Resident Office ]
+            <br>Room 2402, 25A Floor, Guangli Building, 136 Qingchun Road, Xiacheng District,Hangzhou, China P.C.310003 Ho Chi Minh City Resident Office ]<br>
+            <br>Room 3102.B,31F,Lim Tower,No9-11 Ton Duc Thang Street,Ben Nghe Ward,District 1,Ho Chi Minh City<br>
+          +p("URL", "<br>http://www.aeonmall.com")
+          h3.post-title Group Profile
+          p As Japan’s largest retail group, AEON has 10 major business aspects in balanced development under a pure holding company structure.<br>AEONMALL is a core enterprise of AEON responsible for commercial real estate development business.
+          p.text-center
+            img(src="assets/images/data/aeon-introduction.jpg", alt="aeon", width="530", height="360")
+
+block script

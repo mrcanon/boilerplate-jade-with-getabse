@@ -1,0 +1,197 @@
+// ==========================================================================
+// Base – Typography
+// ==========================================================================
+
+// Body
+body {
+  background: $base-background-color;
+  color: $base-font-color;
+  font: #{$base-font-weight} #{$base-font-size}px / #{$base-line-height}px #{$base-font-family};
+}
+
+// Paragraph
+p { margin: 0 0 20px; }
+
+// Links
+a {
+  // -webkit-text-decoration-skip: objects;
+  background-color: transparent;
+  color: $base-link-color;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+
+  &:active,
+  &:hover {
+    color: $base-link-hover-color;
+    outline-width: 0;
+    text-decoration: none;
+  }
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-heading-font-family;
+  margin: 0;
+}
+
+h1,
+.fs-1 {
+  @include font-size($base-h1-font-size);
+  @include line-height($base-h1-line-height);
+}
+
+h2,
+.fs-2 {
+  @include font-size($base-h2-font-size);
+  @include line-height($base-h2-line-height);
+}
+
+h3,
+.fs-3 {
+  @include font-size($base-h3-font-size);
+  @include line-height($base-h3-line-height);
+}
+
+h4,
+.fs-4 {
+  @include font-size($base-h4-font-size);
+  @include line-height($base-h4-line-height);
+}
+
+h5,
+.fs-5 {
+  @include font-size($base-h5-font-size);
+  @include line-height($base-h5-line-height);
+}
+
+h6,
+.fs-6 {
+  @include font-size($base-h6-font-size);
+  @include line-height($base-h6-line-height);
+}
+
+h1 {
+  color: $base-h1-color;
+  font-weight: $base-h1-font-weight;
+  margin-bottom: 11px;
+}
+
+h2 {
+  color: $base-h2-color;
+  font-weight: $base-h2-font-weight;
+  margin-bottom: 4px;
+}
+
+h3 {
+  color: $base-h3-color;
+  font-weight: $base-h3-font-weight;
+  margin-bottom: 4px;
+}
+
+h4 {
+  color: $base-h4-color;
+  font-weight: $base-h4-font-weight;
+  margin-bottom: 4px;
+}
+
+h5 {
+  color: $base-h5-color;
+  font-weight: $base-h5-font-weight;
+  margin-bottom: 2px;
+}
+
+h6 {
+  color: $base-h6-color;
+  font-weight: $base-h6-font-weight;
+  margin-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+// Bold and Strong
+b,
+strong,
+.strong {
+  font-weight: 500;
+}
+
+// Italics
+em,
+.em {
+  font-style: italic;
+}
+
+// Abbreviation
+abbr,
+.abbr {
+  &[title] {
+    border-bottom: 0;
+    text-decoration: underline;
+  }
+}
+
+// Definition
+dfn {
+  font-style: italic;
+}
+
+// Small
+small,
+.small {
+  @include font-size(13);
+  @include line-height(16);
+}
+
+// Mark
+mark,
+.mark {
+  background-color: $base-color-mark;
+  color: $base-color-darkder;
+}
+
+// Sub and Sup
+sub,
+.sub,
+sup,
+.sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub,
+.sub {
+  bottom: -.25em;
+}
+
+sup,
+.sup {
+  top: -.5em;
+}
+
+// Del
+del,
+.del {
+  text-decoration: line-through;
+}
+
+// Images
+figure {
+  margin: 1em 40px;
+}
+
+// Horizontal Rules
+hr,
+.hr {
+  background: $base-color-gray-light;
+  border: 0;
+  box-sizing: content-box;
+  height: 1px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

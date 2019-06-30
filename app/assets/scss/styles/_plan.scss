@@ -1,0 +1,89 @@
+$plan-bg-color: #f6e5f1;
+
+.plan-table {
+  color: $base-link-hover-color;
+  margin-bottom: 30px;
+}
+
+.plan-row {
+  border: 1px solid $color-gray-light;
+  margin-bottom: 26px;
+
+  &:first-child {
+    display: none;
+  }
+}
+
+.plan-cell {
+
+  span {
+    display: block;
+    padding: 10px 15px;
+  }
+
+  &::before {
+    background-color: $plan-bg-color;
+    content: attr(data-title);
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+  }
+}
+
+.post-image {
+  border: 1px solid $color-gray-light;
+}
+
+.plan-content {
+  margin-top: 17px;
+}
+
+//breakpoint XL
+@include breakpoint(m) {
+  .plan-wrap {
+    border: 1px solid $color-gray-light;
+  }
+
+  .plan-table {
+    display: table;
+    margin-bottom: 0;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .plan-row {
+    border: 0;
+    display: table-row;
+    margin-bottom: 0;
+
+    &:nth-child(odd) {
+      background: $color-gray-lighter;
+    }
+
+    &:first-child {
+      background: $plan-bg-color;
+      display: table-row;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .plan-cell {
+    display: table-cell;
+    padding: 10px 20px;
+
+    &::before {
+      display: none;
+    }
+
+    span {
+      padding: 0;
+    }
+  }
+
+  .row-plan {
+    margin-top: 30px;
+  }
+
+}

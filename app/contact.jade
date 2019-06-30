@@ -1,0 +1,87 @@
+extends layouts/full-width.jade
+mixin step(link, number, text, classextra)
+  li.steps-item(class="#{classextra}")
+    h5.steps-title
+      span.steps-number #{number}
+      span.steps-text #{text}
+block head
+  +head(
+  'Contact',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+block banner
+  .banner
+    .container
+      .banner-content
+        .banner-wrap
+          .banner-summary
+          .banner-heading
+            h2.banner-tittle Contact
+  ///.banner
+  = '\n'
+block content
+  ul.nav-breadcrumb
+    li
+      a(href="#", title="Home") Home
+    li
+      span Contact
+  ///.nav-breadcrumb
+  = '\n'
+  form(action="#" method="post")
+    .contact#contact
+      h2.post-heading Send us your contact information
+      ul.steps
+        +step("#", "1", "Input your information", "step-1 is-active")
+        +step("#", "2", "Confirm information", "step-2")
+        +step("#", "3", "Complete", "step-3 step-last")
+      ///.steps
+      = '\n'
+      .contact-form#contact-form
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Full name <span>*</span>
+            .col-12.col-8-m.col-9-l
+              input.contact-control(type="text", name="name" required)
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Company name
+            .col-12.col-8-m.col-9-l
+              input.contact-control(type="text", name="company" )
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Email <span>*</span>
+            .col-12.col-8-m.col-9-l
+              input.contact-control(type="email", name="email" required )
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Phone number <span>*</span>
+            .col-12.col-8-m.col-9-l
+              input.contact-control(type="number", name="phone" required)
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Contact to
+            .col-12.col-8-m.col-9-l
+              select.contact-control(name="position")
+                option Please choose a department to contact
+                option Please choose a department
+        .contact-group
+          .row
+            .col-12.col-4-m.col-3-l
+              label.contact-label Content <span>*</span>
+            .col-12.col-8-m.col-9-l
+              textarea.contact-control(name="message", required)
+        .contact-action
+          button.btn-confirm#btn-confirm(type="submit") Confirm
+          button.btn-submit#btn-submit(name="btnSubmitStep2",type="submit") Submit
+          button.btn-back#btn-back(href="#") Back

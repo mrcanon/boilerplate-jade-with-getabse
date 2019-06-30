@@ -1,0 +1,32 @@
+// ==========================================================================
+// Base – Lists
+// ==========================================================================
+ul,
+ol {
+  margin: 20px 0;
+  padding: 0 0 0 40px;
+}
+
+dl {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  dt {
+    display: block;
+    float: left;
+    font-weight: 400;
+    width: 25%;
+  }
+
+  dd {
+    display: block;
+    overflow: hidden;
+  }
+}

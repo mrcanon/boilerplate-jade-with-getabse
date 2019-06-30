@@ -1,0 +1,79 @@
+extends layouts/full-width.jade
+mixin promotion(link, title, src, time, description)
+  article.promotion(data-mh="promotion")
+    .row
+      .col-12.col-8-m.right-m
+        h2.promotion-title
+          a(href="#{link}", title="#{title}") #{title}
+      .col-12.col-4-m
+        a(href="#{link}", title="#{title}")
+          img.promotion-media(src="#{src}", alt="#{title}", width="500", height="350")
+      .col-12.col-8-m
+        .promotion-table
+          .promotion-row
+            .promotion-cell
+              .promotion-time #{time}
+            .promotion-cell
+              ul.promotion-info
+                li Aeon Tân Phú
+                li Aeon Bình Dương
+                li Aeon Bình Tân
+                li Aeon Long Biên
+        p !{description}
+        .promotion-more
+          a(href="#{link}", title="#{title}") View more
+mixin paging(link, title, current)
+  if current != ""
+    li
+      a(href="#{link}", title="#{title}", class="#{current}") !{title}
+  else
+    li
+      a(href="#{link}", title="#{title}") !{title}
+block head
+  +head(
+  'Promotion',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+block banner 
+  .banner
+    .container
+      .banner-content
+        .banner-wrap
+          .banner-summary
+          .banner-heading
+            h2.banner-tittle Promotion
+  ///.banner
+  = '\n'
+
+block content
+  ul.nav-breadcrumb
+    li
+      a(href="#", title="Home") Home
+    li
+      a(href="#", title="News & Events") News & Events
+    li
+      span Promotion
+  ///.nav-breadcrumb
+  = '\n'
+  +promotion('#', 'AEON Shopping by phone', 'assets/images/data/promotion/1.jpg', '11/2016 - 12/2016', 'Quickly - convenience - easy to service when shopping by phone purchase of vietnam aeon.')
+  +promotion('#', 'Promotions from Shiseido', 'assets/images/data/promotion/2.jpg', '9/2016 - 10/2016', 'Lorem ipsum dolor sit amet, consect adipiscing elit. Duis tristique nisl accumsan dui vestibulumet dignissim.')
+  +promotion('#', 'Black Friday - Super sale', 'assets/images/data/promotion/3.jpg', '7/2016 - 8/2016', 'Lorem ipsum dolor sit amet, consect adipiscing elit. Duis tristique nisl accumsan dui vestibulumet dignissim.')
+  +promotion('#', 'Pillow lucky cat', 'assets/images/data/promotion/4.jpg', '7/2016 - 8/2016', 'Lorem ipsum dolor sit amet, consect adipiscing elit. Duis tristique nisl accumsan dui vestibulumet dignissim.')
+  = '\n'
+  .paging
+    .paging-list
+      span.current 1
+      +paging('#', '2', '')
+      +paging('#', '3', '')
+      +paging('#', '4', '')
+      a(href="#", title="Next")
+        i.fa.fa-angle-right(aria-hidden="true")
+      a(href="#", title="Next")
+        i.fa.fa-angle-double-right(aria-hidden="true")
+block script
